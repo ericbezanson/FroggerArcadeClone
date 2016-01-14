@@ -66,7 +66,7 @@ player.prototype.render = function(){
 player.prototype.update = function() {
     this.detectCollisions();
     if (this.y < 40 && this.y <= 400 && this.x >= 0 && this.x <= 400) {
-    alert("You win! Click 'OK' to play again.");
+    alert("V I C T O R Y !");
     player.playerReset();
   }
 };
@@ -77,13 +77,13 @@ player.prototype.detectCollisions = function() {
     // Reset the game if plater collides with enemy.
     if (this.x >= enemy.x && this.x < (enemy.x + 50) && this.y >= enemy.y && this.y < (enemy.y + 85)) {
       player.playerReset();
-      console.log('Splat!');
+      console.log('We Shall meet again in Valhalla brave warrior...');
     }
     // Reset the game if player leaves canvas.
     if (this.x < 0 || this.x > 400 || this.y > 400) {
       player.playerReset();
-      alert('You went out of bounds. Try again!');
-      console.log('Out of bounds!');
+      alert('You have fled the battlefield!');
+      console.log('You have fled the battlefield!');
     }
   }
 };
