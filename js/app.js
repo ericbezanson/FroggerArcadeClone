@@ -21,7 +21,7 @@ Enemy.prototype.update = function(dt) {
     this.x += this.move * dt;
     var levelWidth = 500;
     if (this.x > levelWidth) {
-        this.x= -100
+        this.x= -100;
         this.moveSpeed();
     }
 
@@ -34,7 +34,7 @@ Enemy.prototype.moveSpeed = function() {
 Enemy.prototype.reset = function() {
     this.x = -100;
     this.MoveSpeed();
-}
+};
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -57,7 +57,7 @@ var player = function(){
     this.rightBoundry = 420;
     this.moveY = 85;
     this.moveX = 100;
-}
+};
 // draw player sprite on screen
 player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
