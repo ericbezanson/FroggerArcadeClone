@@ -1,5 +1,5 @@
 // --- ENEMY ---
-var moveMultiply = 115;
+var MOVE_MULTIPLY = 115;
 var Enemy = function(initX, initY, move) {
     // Variables applied to each of our enemy instances go here,
     // we've provided one for you to get started
@@ -28,7 +28,7 @@ Enemy.prototype.update = function(dt) {
 };
 //add variable movement, base movement speed set to 100 which can  be increaed by 2-5x base speed.
 Enemy.prototype.moveSpeed = function() {
-    this.move = moveMultiply * (Math.floor(Math.random() * 5) + 1);
+    this.move = MOVE_MULTIPLY * (Math.floor(Math.random() * 5) + 1);
 };
 //created reset function to ensure once bugs are off screen on the right they restart off screen on left.
 Enemy.prototype.reset = function() {
@@ -67,7 +67,7 @@ player.prototype.update = function() {
     this.detectCollisions();
     if (this.y < 40 && this.y <= 400 && this.x >= 0 && this.x <= 400) {
     alert("V I C T O R Y !");
-    player.playerReset();
+    this.playerReset();
   }
 };
 // log your embarassing defeat or cowardly attempt to flee to the console so none may learn of your failure.
@@ -76,12 +76,12 @@ player.prototype.detectCollisions = function() {
     var enemy = allEnemies[i];
     // Reset the game if plater collides with enemy.
     if (this.x >= enemy.x && this.x < (enemy.x + 50) && this.y >= enemy.y && this.y < (enemy.y + 85)) {
-      player.playerReset();
+      this.playerReset();
       console.log('We Shall meet again in Valhalla brave warrior...');
     }
     // Reset the game if player leaves canvas.
     if (this.x < 0 || this.x > 400 || this.y > 400) {
-      player.playerReset();
+      this.playerReset();
       alert('You have fled the battlefield!');
       console.log('You have fled the battlefield!');
     }
@@ -134,7 +134,7 @@ var player = new player();
 var allEnemies = [];
 
 for (var i = 0; i < 3; i++) {
-    var baseMove = moveMultiply * (Math.floor(Math.random() * 5) + 1);
+    var baseMove = MOVE_MULTIPLY * (Math.floor(Math.random() * 5) + 1);
     allEnemies.push(new Enemy(-100, 60 + 85 * i, baseMove));
 }
 
