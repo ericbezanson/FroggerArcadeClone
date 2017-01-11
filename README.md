@@ -18,4 +18,4 @@ The Enemies object is created with some base attributes and update, movespeed, r
 
 
 
-![alt text](imgages/screenshot.jpg "App Screenshot")
+![alt text](images/screenshot.jpg "App Screenshot")
